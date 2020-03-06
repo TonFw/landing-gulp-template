@@ -1,0 +1,100 @@
+<!doctype html>
+<html ng-app="FireLanding">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- mobile -->
+    <meta name="viewport" content="width=device-width"/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+
+    <!-- SEO -->
+    <title> Savest - Seus investimentos sem riscos e com mesma rentabilidade GRÁTIS </title>
+    <meta name="description" content=" Seus investimentos sem riscos e com mesma rentabilidade GRÁTIS ">
+
+    <!-- Facebook head tags for share -->
+    <meta property="og:url" content="https://www.savest.com.br"/>
+    <meta property="og:type" content="product"/>
+    <meta property="og:title" content="Savest - Seus investimentos sem riscos e com mesma rentabilidade GRÁTIS"/>
+    <meta property="og:description" content="Estou fazendo meu seguro de investimento, faça já também o seu, é  GRÁTIS!"/>
+    <meta property="og:image" content="http://nitrostart.com.br/images/open-graph/no_nitro_with_nitro.png"/>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content=" savest ">
+    <link rel="icon" sizes="192x192" href="images/brand.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=" savest ">
+    <link rel="apple-touch-icon" href="images/brand.png">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body class="landing-page landing-page1">
+    <!--[if lte IE 8]>
+    <p class="browsehappy">Você está usando um navegador <strong>muito antigo</strong>. Por favor <a
+      href="http://browsehappy.com/">atualize
+      seu navegador</a> para melhorar sua experiência.</p>
+    <![endif]-->
+
+    <!-- The view is loaded here -->
+    <div ui-view></div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src='bower_components/ngMask/dist/ngMask.min.js'></script>
+
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,src}) scripts/scripts.js -->
+    <script src="scripts/contents/angel.js"></script>
+    <script src="scripts/contents/starter.js"></script>
+
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/helpers.js"></script>
+
+    <script src="scripts/factories.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+
+
+    <!-- Google Analytics -->
+    <script>
+      if(isItEnv('production')) {
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-85002231-1', 'auto');
+        ga('send', 'pageview');
+      }
+    </script>
+
+    <link href="https://file.myfontastic.com/nKKRAFZFxkAsU3UWNR93S4/icons.css" rel="stylesheet">
+  </body>
+</html>

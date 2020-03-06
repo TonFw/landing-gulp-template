@@ -1,0 +1,192 @@
+// NavBar
+nav.navbar.navbar-transparent.navbar-top(role="navigation")
+  .container
+    .navbar-header
+      a(href="#")
+        .logo-container.text-shadow
+          h2.brand-font-icon
+            i(class="icon {{ content.brand.icon }}")
+            span(ng-bind-html="escapeHTML(content.brand.name)")
+
+
+
+// Content
+.wrapper
+  // banner section
+  div(class="parallax")
+    .parallax-background
+      img.parallax-background-image(src="images/bg.jpg" style="width: 120%;")
+    .container(style="margin-left: 10%;")
+      .row
+        .col-md-7
+          .description
+            h2.strong {{ content.banner.main_value }}
+            h4 {{ content.banner.second_value }}
+            h5.black-text
+              ul.check-list
+                li(ng-repeat="bullet in content.banner.bullets") {{ bullet }}
+            h4.strong.text-center.small_margin_top {{ content.banner.extra }}
+
+        .col-md-5.col-xs-12.col-sm-12
+          .parallax-image.video
+            p.left.white-text.text-shadow: strong *Este vídeo não contém áudio
+            iframe#bannerVideo(height="315" src="https://www.youtube.com/embed/-Af7M1O3o0A" frameborder="0" allowfullscreen)
+
+        .call_to_action.col-xs-12.col-sm-12.hide-on-med-and-up
+          a(class="col-md-12 btn btn-lg btn-fill btn-danger" ui-sref="register")
+            i(class="icon {{ content.banner.call_to_action.icon }}")
+            | {{ content.banner.call_to_action.text }}
+
+      .row
+        .call_to_action.col-md-6.col-md-offset-3.hide-on-small-only
+          a(class="col-md-12 btn btn-lg btn-fill btn-danger" ui-sref="register")
+            i(class="icon {{ content.banner.call_to_action.icon }}")
+            | {{ content.banner.call_to_action.text }}
+
+
+
+  // guest post
+  .guest_post.section.section-presentation.margin_top
+    .container
+      h4.header-text.text-center {{ content.guest_post.title }}
+      h5.subtitle.text-center {{ content.guest_post.subtitle }}
+      .row(ng-repeat="guest in content.guest_post.guests")
+        .col-md-6
+          .description
+            h4.header-text {{ guest.name }}
+            h5.subtitle {{ guest.role }}
+            blockquote: p {{ guest.summary }}
+            blockquote: p {{ guest.summary2 }}
+            blockquote: p {{ guest.summary3 }}
+        .video.col-md-6
+          .description
+            iframe(width="100%" height="350" src="https://www.youtube.com/embed/V1STaqCMzGY?list=PLonukOjaTmG--qHwYC-t9lO-3qqOFrziF" frameborder="0" allowfullscreen)
+
+      .row
+        .call_to_action.col-md-6.col-md-offset-3
+          a(class="col-md-12 btn btn-lg btn-fill btn-{{ visual_identity.btn }}" ui-sref="register")
+            i(class="icon {{ content.guest_post.call_to_action.icon }}")
+            | {{ content.guest_post.call_to_action.text }}
+
+
+
+  // partners or customer brand
+  .section.section-gray.section-clients
+    .container.text-center
+      h4.header-text {{ content.partners.title }}
+      p(ng-bind-html="escapeHTML(content.partners.description)")
+
+      .logos
+        ul.list-unstyled
+          li(ng-repeat="brand in content.partners.brands")
+            img(ng-src="images/brands/{{ brand }}")
+
+      .row
+        .call_to_action.col-md-6.col-md-offset-3.hide-on-small-only
+          a(class="col-md-12 btn btn-lg btn-fill btn-{{ visual_identity.btn }}" ui-sref="register")
+            i(class="icon {{ content.partners.call_to_action.icon }}")
+            | {{ content.partners.call_to_action.text }}
+
+        .call_to_action.col-md-6.col-md-offset-3.hide-on-med-and-up
+          a(class="col-md-12 btn btn-lg btn-fill btn-warning" ui-sref="register")
+            i(class="icon {{ content.partners.call_to_action.icon }}")
+            | {{ content.partners.call_to_action.text }}
+
+
+
+  // features/samples
+  .section.section-features
+    .container
+      h4.header-text.text-center {{ content.showroom.title }}
+      h5.subtitle.text-center {{ content.showroom.subtitle }}
+      .row
+        .col-md-4(ng-repeat="sample in content.showroom.samples")
+          div(class="card card-{{ sample.color }}")
+            .icon
+              i(class=" {{ sample.icon }} ")
+            .text
+              h4 {{ sample.title }}
+              p(ng-bind-html="escapeHTML(sample.description)")
+            .hide-on-med-and-up.small_margin_top
+              a(class="col-md-12 btn btn-{{ sample.call_to_action.color }}" ui-sref="register")
+                i(class="icon {{ sample.call_to_action.icon }}")
+                | {{ sample.call_to_action.text }}
+      .row.hide-on-small-only
+        .call_to_action.col-md-6.col-md-offset-3
+          a(class="col-md-12 btn btn-lg btn-fill btn-{{ visual_identity.btn }}" ui-sref="register")
+            i(class="icon {{ content.showroom.call_to_action.icon }}")
+            | {{ content.showroom.call_to_action.text }}
+
+
+
+  // objections treatments
+  .section.section-presentation
+    #objections.container
+      .row
+        h4.header-text.text-center {{ content.objections.title }}
+        h5.subtitle.text-center {{ content.objections.subtitle }}
+      #comparison.margin_top
+        .row
+          .col-md-5.text-center: h5.grey-text {{ content.objections.comparison.competitorName }}
+          .col-md-2.text-center: h5 vs
+          .col-md-5.text-center: h5 {{ content.objections.comparison.ourName }}
+
+        //.row(ng-repeat="point in content.objections.comparison.points")
+        //  .col-md-5 {{ point.competitor }}
+        //  .col-md-2.text-center x
+        //  .col-md-5 {{ point.us }}
+
+        .row.comparative(ng-repeat="point in content.objections.comparison.points")
+          .col-md-5 {{ point.competitor }}
+          .col-md-2.text-center vs
+          .col-md-5 {{ point.us }}
+      .row.margin_top
+        .call_to_action.col-md-6.col-md-offset-3
+          a(class="col-md-12 btn btn-lg btn-fill btn-{{ visual_identity.btn }}" ui-sref="register")
+            i(class="icon {{ content.objections.call_to_action.icon }}")
+            | {{ content.objections.call_to_action.text }}
+
+
+
+  footer.footer
+    .container
+      .col-md-4.pull-left
+        i.icon.ion-map
+        p SAUS, Quadra 04, Bloco A, Sala 725, Edifício Victoria Office Tower – Asa Sul, DF, 70070-938
+      .col-md-4.col-md-offset-1
+        i.legal_id.icon.ion-ribbon-b
+        p
+          strong CNPJ: 22.236.917/0001­22
+          br
+          i NITRO START
+          | &nbsp; tecnologia e serviços.
+          br
+          | Empresa do grupo Action Holding.
+      .col-md-3
+        ul.contact_info
+          li
+            i.small_margin_right.ion-social-whatsapp-outline
+            span +55 (61) 98130-0410
+          li
+            i.small_margin_right.ion-email
+            span contato@actionholding.com.br
+
+
+
+
+  //// customer social proof
+  //.customer_posts.section.section-features
+  //  .container
+  //    .row
+  //      h4.header-text.text-center {{ content.social_proof.title }}
+  //      .col-md-12
+  //        .fb-comments(data-href="{{ domain_url }}" data-width="100%" data-numposts="3")
+  //    .row.margin_top
+  //      .call_to_action.col-md-6.col-md-offset-3
+  //        a(class="col-md-12 btn btn-lg btn-fill btn-{{ visual_identity.btn }}" ui-sref="register")
+  //          i(class="icon {{ content.social_proof.call_to_action.icon }}")
+  //          | {{ content.social_proof.call_to_action.text }}
+
+  script.
+    var bannerVideo = iframe.getElementById('bannerVideo');
+    bannerVideo.mute();

@@ -1,0 +1,78 @@
+@media only screen and (max-width : 767px) {
+  ul {
+    li {
+      margin: 10px 0 !important;
+      text-align: left !important;
+    }
+  }
+
+  .parallax.filter-gradient {
+    .container {
+      margin-left: -12px !important;
+    }
+  }
+
+  .landing-page .parallax {
+    height: 1460px !important;
+  }
+
+  #comparison {
+    .col-md-2 {
+      margin: 22px 0;
+    }
+  }
+
+  .section-clients {
+    ul li {
+      text-align: center !important;
+    }
+  }
+
+  a.btn {
+    left: -10px !important;
+    white-space: normal;
+    max-width: 100% !important;
+  }
+
+  .landing-page {
+    .parallax {
+      .container {
+        width: 100% !important;
+        margin: -40px 0 0 0 !important;
+
+        iframe {
+          width: 100% !important;
+        }
+      }
+
+      .parallax-image {
+        margin: 15px auto 0 !important;
+      }
+    }
+  }
+
+  .call_to_action {
+    a {
+      margin-left: 20px !important;
+    }
+  }
+
+  footer.footer {
+    div[class^="col-md-"],
+    div[class*=" col-md-"] {
+      margin: 35px 0 !important;
+    }
+
+    i.legal_id.icon {
+      top: 70% !important;
+    }
+
+    p {
+      margin-left: 50px;
+    }
+
+    i.icon {
+      left: 10px;
+    }
+  }
+}
