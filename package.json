@@ -26,7 +26,7 @@
     "jshint-stylish": "^1.0.0",
     "karma": ">= 0.10 <= 0.13",
     "lazypipe": "^0.2.4",
-    "open": "0.0.5",
+    "open": "6.0.0",
     "pug": "^2.0.0-beta6",
     "rimraf": "^2.4.0",
     "run-sequence": "^1.1.1",
